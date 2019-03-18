@@ -1,0 +1,32 @@
+// Paleta de colores
+
+$colors:(
+  primary: #0072ff,
+  primaryt: rgba(27, 74, 213, 0.9),
+  secondary: #00c6ff,
+  tertiary: #00AFFB,
+  success: #60d394,
+  alert: #FB5F49,
+  bg: #FEFEFE,
+  withe: #ffffff,
+  cta: #FF8F00,
+  footer: #3E3F55,
+  dark-orange: #FF8F00,
+  orange: #FEB200,
+  aquamarine: #57EFBE,
+  medium-slate-blue: #1B48D5,
+  azure: #007DF3,
+  deep-sky-blue: #00AFFB,
+  kournikova: #F4D350,
+  color-fuente: #9570f1,
+  botones: rgb(67, 19, 93),
+  tomato: #FB5F49,
+  alice-blue: #EDF2FF,
+  fuente-titulo: #544cb9
+);
+
+// Degradados
+
+$degradado: linear-gradient(125deg, #00c8ff, #0073ff);
+
+$degradado2: linear-gradient(125deg, rgba(0, 200, 255, 0.5), rgba(0, 115, 255, 0.5));

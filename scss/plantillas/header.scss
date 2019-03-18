@@ -1,0 +1,17 @@
+.Header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: capa(capa10);
+  width: 100%;
+  height: $altura-header;
+  line-height: $altura-header;
+  &-container{
+    position: relative;
+    margin: 0 auto;
+    max-width: 100%;
+    @include mq(md){
+      display: flex;
+    }
+  }
+}

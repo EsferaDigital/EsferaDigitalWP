@@ -1,0 +1,32 @@
+// Configuración
+
+@import "../scss/config/personalizacion";
+@import "../scss/config/reset";
+@import "../scss/config/funciones";
+@import "../scss/config/fuentes";
+@import "../scss/config/colores";
+@import "../scss/config/var_generales";
+@import "../scss/config/breakpoints";
+
+//Plantillas
+
+@import "../scss/plantillas/index";
+@import "../scss/plantillas/header";
+@import "../scss/plantillas/page";
+@import "../scss/plantillas/sidebar";
+@import "../scss/plantillas/footer";
+
+//Page-templates
+@import "../scss/page-templates/page-inicio";
+
+//Template-parts
+
+@import "../scss/template-parts/header-logo";
+@import "../scss/template-parts/header-menu";
+
+//Secciones
+
+@import "../scss/secciones/gutenberg";
+
+
+
