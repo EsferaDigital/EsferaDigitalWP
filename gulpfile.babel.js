@@ -86,8 +86,8 @@ gulp.task('jsunicos', () => {
 
 //Une el archivo global script con uno de los archivos únicos. Se necesita correr cada vez que necesitemos un archivo único cambiando el nombre del archivo correspondiente.
 gulp.task('unico', () => {
-  gulp.src(['./js/global.js', './js/unicos/inicio.js'])
-    .pipe(concat('inicio.js'))
+  gulp.src(['./js/global.js', './js/unicos/nosotros.js'])
+    .pipe(concat('nosotros.js'))
     .pipe(gulp.dest('./js/'))
 })
 

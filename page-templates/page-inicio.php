@@ -58,7 +58,45 @@ Template name: Inicio
         </div>
       </article>
     </section>
+    <section class="Servicios">
+      <h2>¿Qué Ofrecemos?</h2>
+      <div class="Servicios-content">
+        <div class="Servicios-card">
+          <div class="Servicios-card-img">
+            <img src="<?php echo esc_url(home_url('/wp-content/themes/esferadigital/img/planes.svg')); ?>">
+          </div>
+          <p class="Servicios-card-text">
+            Planes para desarrollar, actualizar y mejorar continuamente tu sitio web o aplicación.
+          </p>
+        </div>
+        <div class="Servicios-card">
+          <div class="Servicios-card-img">
+            <img src="<?php echo esc_url(home_url('/wp-content/themes/esferadigital/img/desarrollo-web.svg')); ?>">
+          </div>
+          <p class="Servicios-card-text">
+            Desarrollo de sitios web profesional, moderno, a medida, adaptado a todos los tamaños de dispositivo y auto-adminstrable.
+          </p>
+        </div>
+        <div class="Servicios-card">
+          <div class="Servicios-card-img">
+            <img src="<?php echo esc_url(home_url('/wp-content/themes/esferadigital/img/pwa.svg')); ?>">
+          </div>
+          <p class="Servicios-card-text">
+            Progressive Web App. Aplicaciones web que permiten mejoras excelente y que corren en todos los dispositivos.
+          </p>
+        </div>
+        <div class="Servicios-card">
+          <div class="Servicios-card-img">
+            <img src="<?php echo esc_url(home_url('/wp-content/themes/esferadigital/img/app-movil.svg')); ?>">
+          </div>
+          <p class="Servicios-card-text">
+            Aplicaciones móviles híbridas.
+          </p>
+        </div>
+      </div>
+    </section>
     <section class="Tecnologias">
+      <h2>Tecnologias</h2>
       <div class="Tecnologias-content">
         <div class="Tecnologias-card">
           <div class="Tecnologias-card-img">
@@ -122,42 +160,6 @@ Template name: Inicio
           </div>
           <p class="Tecnologias-card-text">
             Ionic es un Framework que permite desarrollar aplicaciones móviles hibridas.
-          </p>
-        </div>
-      </div>
-    </section>
-    <section class="Servicios">
-      <div class="Servicios-content">
-        <div class="Servicios-card">
-          <div class="Servicios-card-img">
-            <img src="<?php echo esc_url(home_url('/wp-content/themes/esferadigital/img/planes.svg')); ?>">
-          </div>
-          <p class="Servicios-card-text">
-            Planes para desarrollar, actualizar y mejorar continuamente tu sitio web o aplicación.
-          </p>
-        </div>
-        <div class="Servicios-card">
-          <div class="Servicios-card-img">
-            <img src="<?php echo esc_url(home_url('/wp-content/themes/esferadigital/img/desarrollo-web.svg')); ?>">
-          </div>
-          <p class="Servicios-card-text">
-            Desarrollo de sitios web a madida o a partir de una plantilla pre-diseñada.
-          </p>
-        </div>
-        <div class="Servicios-card">
-          <div class="Servicios-card-img">
-            <img src="<?php echo esc_url(home_url('/wp-content/themes/esferadigital/img/pwa.svg')); ?>">
-          </div>
-          <p class="Servicios-card-text">
-            Progressive Web App. Aplicaciones web que permiten mejoras excelente y que corren en todos los dispositivos.
-          </p>
-        </div>
-        <div class="Servicios-card">
-          <div class="Servicios-card-img">
-            <img src="<?php echo esc_url(home_url('/wp-content/themes/esferadigital/img/app-movil.svg')); ?>">
-          </div>
-          <p class="Servicios-card-text">
-            Aplicaciones móviles híbridas.
           </p>
         </div>
       </div>

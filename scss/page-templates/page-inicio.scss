@@ -5,6 +5,8 @@
   background-color: white;
   margin-bottom: $margen-secciones;
   overflow: hidden;
+  position: relative;
+  top: -$altura-header;
 }
 
 .Slider-content{

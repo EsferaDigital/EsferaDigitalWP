@@ -46,6 +46,12 @@ if(!function_exists('esfera_scripts')):
 
       wp_enqueue_script('inicio-script');
     endif;
+
+    if(is_page('nosotros')):
+      wp_register_script('nosotros-script', get_template_directory_uri() . '/js/nosotros.js', array('jquery'), '1.0.0', true);
+
+      wp_enqueue_script('nosotros-script');
+    endif;
   }
 endif;
 add_action( 'wp_enqueue_scripts', 'esfera_scripts' );
