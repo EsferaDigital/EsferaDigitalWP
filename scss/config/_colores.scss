@@ -27,6 +27,8 @@ $colors:(
 
 // Degradados
 
-$degradado: linear-gradient(125deg, #00c8ff, #0073ff);
+$degradado: linear-gradient(to right, #00c8ff, #0073ff);
+
+$degradadoB: linear-gradient(to right, #00c7ff, #0073ff);
 
 $degradado2: linear-gradient(125deg, rgba(0, 200, 255, 0.5), rgba(0, 115, 255, 0.5));

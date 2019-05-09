@@ -6,13 +6,28 @@
   width: 100%;
   height: $altura-header;
   line-height: $altura-header;
+  // border: 1px solid red;
+  @include mq(sH){
+    background: $degradado;
+  }
+  @include mq(md){
+    background: $degradado;
+  }
   &-container{
     position: relative;
     margin: 0 auto;
     max-width: 100%;
-    @include mq(md){
+    @include mq(lgs){
       display: flex;
     }
   }
+}
+
+.slideup{
+  @include slideUp(.5s, -500px);
+}
+
+.slidedown{
+  @include slideDown(.5s, $altura-header);
 }
 

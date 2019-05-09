@@ -1,4 +1,14 @@
 .Main{
   margin-top: $altura-header;
-  border: 1px solid red;
+  // border: 1px solid red;
+  @include mq(sH){
+    margin-top: 0;
+  }
+  @include mq(md){
+    margin-top: 0;
+  }
+}
+
+.Main-container{
+  --distancia: 1rem;
 }

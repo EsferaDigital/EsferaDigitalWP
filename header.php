@@ -9,7 +9,7 @@
 </head>
 <body <?php body_class('Body-container'); ?>>
   <?php get_template_part('template-parts/header-custom'); ?>
-  <header class="Header">
+  <header class="Header" id="Header">
     <section class="Header-container">
       <?php
         get_template_part('template-parts/header-logo');

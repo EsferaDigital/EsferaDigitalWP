@@ -1,6 +1,6 @@
 // Sombras
 
-$shadow-flat: 7px 7px 12px rgba(0, 0, 0, 0.575);
+$shadow-flat: 5px 5px 5px rgba(0, 0, 0, 0.575);
 $shadow-blur: 10px 10px 10px rgba(0, 0, 0, 0.575);
 
 // Para ocultar menu lateral en móviles
@@ -28,6 +28,37 @@ $altura-header: 5rem;
 	 capa10: 1000
  );
 
+// Mixin para Titulos y subtitulos
+
+@mixin subtitulos{
+  color: color(botones);
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 1rem;
+  padding-bottom: 1.5rem;
+  letter-spacing: 1px;
+  @include mq(md){
+    font-size: 1.7rem;
+  }
+}
+
+// Mixin para textos de tarjeta
+
+@mixin parrafo-inicio{
+  align-self: center;
+  // padding: .5rem;
+  color: color(footer);
+  font-size: .8rem;
+  @include mq(sH){
+    font-size: 1rem;
+  }
+  @include mq(smm){
+    font-size: .9rem;
+  }
+  // @include mq(md){
+  //   font-size: .9rem;
+  // }
+}
 
 
 

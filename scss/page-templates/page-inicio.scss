@@ -7,6 +7,13 @@
   overflow: hidden;
   position: relative;
   top: -$altura-header;
+  // border: 1px solid red;
+  @include mq(sH){
+    top: $altura-header;
+  }
+  @include mq(md){
+    top: $altura-header;
+  }
 }
 
 .Slider-content{
@@ -18,6 +25,9 @@
     width: 100%;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
+    @include mq(sH){
+      grid-template-columns: 1fr 1fr;
+    }
     @include mq(md){
       grid-template-columns: 1fr 1fr;
     }
@@ -30,7 +40,16 @@
       top: 0;
       left: 0;
       background: $degradado;
-      opacity: .6;
+      opacity: .8;
+      @include mq(sH){
+        width: 50%;
+        background: $degradadoB;
+      }
+      @include mq(md){
+        width: 50%;
+        background: $degradadoB;
+        // border: 1px solid red;
+      }
     }
     &-text{
       position: relative;
@@ -38,13 +57,20 @@
       grid-column: 1;
       grid-row: 1;
       align-self: center;
+      // justify-self: center;
       // border: 1px solid green;
       padding: 0 1.8rem;
-      // padding: $header-hight .5rem 0;
+      @include mq(sH){
+        padding: 0 0 0 2rem;
+      }
       & p{
         color: white;
         font-family: $fuente-parrafos;
         font-size: 1.3rem;
+        @include mq(sH){
+          font-size: 1.2rem;
+          width: 90%;
+        }
       }
       & p:first-child{
         width: 65%;
@@ -54,6 +80,10 @@
         letter-spacing: 2px;
         font-family: $fuente-titulos;
         color: color(botones);
+        @include mq(sH){
+          width: 100%;
+          font-size: 1.5rem;
+        }
       }
     }
     &-img{
@@ -62,8 +92,12 @@
       grid-column: 1;
       grid-row: 1;
       align-self: center;
+      @include mq(sH){
+        grid-column: 2;
+      }
       @include mq(md){
         grid-column: 2;
+        // border: 2px solid green;
       }
       & img{
         display: block;
@@ -74,7 +108,7 @@
 
 .Prev, .Next{
   position: absolute;
-  top: 25%;
+  top: 50%;
   z-index: capa(capa3);
   color: color(bg);
   padding: 10px;
@@ -82,6 +116,12 @@
   font-size: 1.7rem;
   cursor: pointer;
   transition: color .3s ease;
+  @include mq(sH){
+    color: color(color-fuente);
+  }
+  @include mq(md){
+    color: color(color-fuente);
+  }
   &:hover{
     @include mq(md){
       color: color(botones);
@@ -107,45 +147,100 @@
 
 .Slogan{
   margin-bottom: $margen-secciones;
+  margin-top: - $altura-header;
+  @include mq(sH){
+    margin-top: 6rem;
+  }
+  @include mq(md){
+    margin-top: 6rem;
+  }
 }
 
 .Slogan-content{
-  border: 2px solid red;
+  width: 95%;
+  padding: var(--distancia);
+  margin: auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  background-color: color(bg);
+  box-shadow: $shadow-flat;
+  grid-gap: var(--distancia);
+  &-item{
+    align-self: center;
+    // border: 1px solid green;
+    & img{
+      display: block;
+      margin: auto;
+      max-width: 200px;
+    }
+    & p{
+      @include parrafo-inicio;
+      @include mq(md){
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+.Servicios, .Tecnologias{
+  width: 95%;
+  margin: 0 auto $margen-secciones;
+  & h2{
+    @include subtitulos;
+  }
+}
+
+.Servicios-content, .Tecnologias-content{
+  // border: 2px solid yellow;
+  display: grid;
+  grid-gap: 1rem;
+  @include mq(md){
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.Servicios-card, .Tecnologias-card{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  box-shadow: $shadow-flat;
+  background-color: color(bg);
+  padding: var(--distancia);
+  grid-gap: var(--distancia);
+  // border: 1px solid red;
+  &-img{
+    align-self: center;
+    & img{
+      display: block;
+      margin: auto;
+      max-width: 180px;
+    }
+  }
+  &-text{
+    @include parrafo-inicio;
+    // border: 1px solid red;
+    max-width: 200px;
+  }
 }
 
 .Tecnologias{
   margin-bottom: $margen-secciones;
 }
 
-.Tecnologias-content{
-  border: 2px solid green;
-  display: grid;
-  grid-gap: $margen-card;
-}
-
 .Tecnologias-card{
-  border: 2px solid blue;
-  border-radius: 10px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  // border: 2px solid red;
+  display: block;
+  &-img{
+    // border: 2px solid green;
+    display: inline;
+    & img{
+      display: inline;
+      width: 90px;
+      float: left;
+      padding: 0 1rem 0 .5rem;
+    }
+  }
+  &-text{
+    display: inline;
+    font-size: 1rem;
+  }
 }
-
-.Servicios{
-  margin-bottom: $margen-secciones;
-}
-
-.Servicios-content{
-  border: 2px solid yellow;
-  display: grid;
-  grid-gap: 1rem;
-}
-
-.Servicios-card{
-  border: 2px solid purple;
-  display: grid;
-  border-radius: 10px;
-  grid-template-columns: 1fr 1fr;
-}
-

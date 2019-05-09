@@ -16,10 +16,10 @@ import imagemin from 'gulp-imagemin';
 
 // import wpPot from 'gulp-wp-pot';
 // import sort from 'gulp-sort';
-
+const server = browserSync.create();
 const reload = browserSync.reload,
   reloadFiles = [
-    './script.js',
+    './js/**/*.js',
     './style.css',
     './**/*.php'
   ],
@@ -42,7 +42,7 @@ const reload = browserSync.reload,
 
 
 
-gulp.task('server', () => browserSync.init(reloadFiles, proxyOptions))
+gulp.task('server', () => server.init(reloadFiles, proxyOptions))
 
 gulp.task('css', () => {
   gulp.src('./css/style.scss')
@@ -53,43 +53,26 @@ gulp.task('css', () => {
     .pipe(cleanCSS())
     .pipe(sourcemaps.write('./css/'))
     .pipe(gulp.dest('./'))
-    .pipe(reload({stream: true}))
+    .pipe(server.stream())
+    // .pipe(reload({stream: true}))
 })
 
-//Toma el archivo index.js y los pasa a global.js legible para los navegadores. Se debe correr sólo cuando hayamos trabajado en el js correspondiente.
+//Toma el archivo index.js y los pasa a al que definamo (cualquiera.js) legible para los navegadores. Se debe correr sólo cuando hayamos trabajado en el js correspondiente.
 gulp.task('js', () => {
-  browserify('./js/dev-global/index.js')
+  browserify('./js/index.js')
     .transform(babelify)
     .bundle()
     .on('error', err => console.log(err.message))
-    .pipe(source('./js/global.js'))
+    .pipe(source('./js/inicio.js'))
     .pipe(buffer())
-    // .pipe(sourcemaps.init({loadMaps: true}))
-    // .pipe(sourcemaps.write('./'))
+    .pipe(sourcemaps.init({loadMaps: true}))
+    .pipe(sourcemaps.write('./'))
     .pipe(jsmin())
     .pipe(gulp.dest('./'))
     .pipe(reload({stream: true}))
 });
 
-//Toma los archivos unicos y los pasa a js legible para los navegadores. Se debe correr cada vez que necesitemos un archivo único
-gulp.task('jsunicos', () => {
-  browserify('./js/dev-unicos/inicio.js')
-    .transform(babelify)
-    .bundle()
-    .on('error', err => console.log(err.message))
-    .pipe(source('./js/unicos/inicio.js'))
-    .pipe(buffer())
-    .pipe(jsmin())
-    .pipe(gulp.dest('./'))
-    .pipe(reload({stream: true}))
-});
 
-//Une el archivo global script con uno de los archivos únicos. Se necesita correr cada vez que necesitemos un archivo único cambiando el nombre del archivo correspondiente.
-gulp.task('unico', () => {
-  gulp.src(['./js/global.js', './js/unicos/nosotros.js'])
-    .pipe(concat('nosotros.js'))
-    .pipe(gulp.dest('./js/'))
-})
 
 // Se corre solamente cuando tengamos archivos por minificar
 gulp.task('img', () => {
@@ -107,6 +90,6 @@ gulp.task('img', () => {
 
 
  gulp.task('default', ['server', 'css'], () => {
-  gulp.watch('./scss/**/*.+(scss|css)', ['css'])
-  gulp.watch('./js/**/*.js', ['js'])
+  gulp.watch('./scss/**/*.+(scss|css)', ['css']).on('change', server.reload)
+  gulp.watch('./js/**/*.js', ['js']).on('change', server.reload)
 });
