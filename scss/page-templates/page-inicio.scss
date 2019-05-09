@@ -197,6 +197,9 @@
   @include mq(mdl){
     margin-top: 8rem;
   }
+  @include mq(lgs){
+    margin-top: - 3rem;
+  }
 }
 
 .Slogan-content{
@@ -223,6 +226,9 @@
       display: block;
       margin: auto;
       max-width: 200px;
+      @include mq(lgs){
+        max-width: 350px;
+      }
     }
     & p{
       @include parrafo-inicio;

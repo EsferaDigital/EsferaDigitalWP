@@ -1,4 +1,19 @@
 .Footer{
   background-color: color(footer);
-  margin-top: $margen-secciones;
+  margin-top: 2rem;
+  &-container{
+    border: 2px solid red;
+    max-width: $ancho-maximo;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr minmax(min-content, max-content);
+    &-item{
+      // border: 2px solid green;
+      color: white;
+    }
+    &-item:nth-child(3){
+      border: 2px solid yellow;
+      grid-column: 1 / 3;
+    }
+  }
 }
