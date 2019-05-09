@@ -7,6 +7,10 @@ $shadow-blur: 10px 10px 10px rgba(0, 0, 0, 0.575);
 
 $off-canvas: 11rem; //modificar segun necesidad o mejora
 
+// Ancho máximo del main container
+
+$ancho-maximo: 1400px;
+
 //Gutter para los margenes
 
 $margen-secciones: 1rem;
@@ -40,6 +44,11 @@ $altura-header: 5rem;
   @include mq(md){
     font-size: 1.7rem;
   }
+  @include mq(lgs){
+    padding: 2rem;
+    padding-bottom: 2.5rem;
+    font-size: 2rem;
+  }
 }
 
 // Mixin para textos de tarjeta
@@ -55,9 +64,12 @@ $altura-header: 5rem;
   @include mq(smm){
     font-size: .9rem;
   }
-  // @include mq(md){
-  //   font-size: .9rem;
-  // }
+  @include mq(md){
+    font-size: 1rem;
+  }
+  @include mq(lgs){
+    font-size: 1.1rem;
+  }
 }
 
 

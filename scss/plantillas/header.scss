@@ -13,12 +13,20 @@
   @include mq(md){
     background: $degradado;
   }
+  @include mq(lgs){
+    background: transparent;
+  }
   &-container{
     position: relative;
     margin: 0 auto;
-    max-width: 100%;
-    @include mq(lgs){
+    max-width: 95%;
+    // border: 1px solid red;
+    @include mq(mdl){
+      width: 90%;
+    }
+    @include mq(lgm){
       display: flex;
+      max-width: $ancho-maximo;
     }
   }
 }

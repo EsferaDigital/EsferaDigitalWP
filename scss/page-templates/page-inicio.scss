@@ -14,6 +14,15 @@
   @include mq(md){
     top: $altura-header;
   }
+  @include mq(mdl){
+    width: 100vw;
+    left: -5vw;
+    // border: 2px solid red;
+  }
+  @include mq(lgs){
+    width: 111%;
+    top: - $altura-header;
+  }
 }
 
 .Slider-content{
@@ -50,6 +59,10 @@
         background: $degradadoB;
         // border: 1px solid red;
       }
+      @include mq(lgs){
+        width: 100%;
+        opacity: .7;
+      }
     }
     &-text{
       position: relative;
@@ -63,6 +76,16 @@
       @include mq(sH){
         padding: 0 0 0 2rem;
       }
+      @include mq(mdl){
+        // border: 1px solid red;
+        padding: 0 0 0 2rem;
+      }
+      @include mq(lgs){
+        // border: 1px solid red;
+        justify-self: center;
+        padding: 0;
+        max-width: 70%;
+      }
       & p{
         color: white;
         font-family: $fuente-parrafos;
@@ -70,6 +93,9 @@
         @include mq(sH){
           font-size: 1.2rem;
           width: 90%;
+        }
+        @include mq(lgs){
+          font-size: 1.5rem;
         }
       }
       & p:first-child{
@@ -83,6 +109,12 @@
         @include mq(sH){
           width: 100%;
           font-size: 1.5rem;
+        }
+        @include mq(mdl){
+          width: 100%;
+        }
+        @include mq(lgs){
+          font-size: 3rem;
         }
       }
     }
@@ -122,6 +154,11 @@
   @include mq(md){
     color: color(color-fuente);
   }
+  @include mq(mdl){
+    top: calc(50% - 1.5rem);
+    font-size: 2rem;
+    padding-left: 1rem;
+  }
   &:hover{
     @include mq(md){
       color: color(botones);
@@ -136,6 +173,9 @@
   padding: 10px;
   padding-right: 5px;
   right: 0;
+  @include mq(mdl){
+    padding-right: 1rem;
+  }
 }
 
 .Slider-img-planes{
@@ -154,6 +194,9 @@
   @include mq(md){
     margin-top: 6rem;
   }
+  @include mq(mdl){
+    margin-top: 8rem;
+  }
 }
 
 .Slogan-content{
@@ -165,6 +208,14 @@
   background-color: color(bg);
   box-shadow: $shadow-flat;
   grid-gap: var(--distancia);
+  // border: 1px solid red;
+  @include mq(mdl){
+    width: 100%;
+    grid-gap: 1rem;
+  }
+  @include mq(lgs){
+    grid-gap: .5rem;
+  }
   &-item{
     align-self: center;
     // border: 1px solid green;
@@ -178,6 +229,9 @@
       @include mq(md){
         font-size: 1rem;
       }
+      @include mq(lgs){
+        font-size: 1.3rem;
+      }
     }
   }
 }
@@ -185,6 +239,9 @@
 .Servicios, .Tecnologias{
   width: 95%;
   margin: 0 auto $margen-secciones;
+  @include mq(mdl){
+    width: 100%;
+  }
   & h2{
     @include subtitulos;
   }
@@ -193,7 +250,7 @@
 .Servicios-content, .Tecnologias-content{
   // border: 2px solid yellow;
   display: grid;
-  grid-gap: 1rem;
+  grid-gap: var(--distancia);
   @include mq(md){
     grid-template-columns: 1fr 1fr;
   }
@@ -224,11 +281,26 @@
 
 .Tecnologias{
   margin-bottom: $margen-secciones;
+  &-content{
+    @include mq(lgs){
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
 }
 
 .Tecnologias-card{
   // border: 2px solid red;
   display: block;
+  padding: 1rem;
+  @include mq(smH){
+    padding: 1.5rem;
+  }
+  @include mq(smm){
+    padding: 1.5rem;
+  }
+  @include mq(lgs){
+    padding: 2rem;
+  }
   &-img{
     // border: 2px solid green;
     display: inline;
@@ -236,11 +308,13 @@
       display: inline;
       width: 90px;
       float: left;
-      padding: 0 1rem 0 .5rem;
+      padding: 0 1rem 0 0;
+      // padding: 0;
     }
   }
   &-text{
     display: inline;
     font-size: 1rem;
+    padding: 0;
   }
 }

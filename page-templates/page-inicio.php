@@ -90,7 +90,7 @@ Template name: Inicio
             <img src="<?php echo esc_url(home_url('/wp-content/themes/esferadigital/img/app-movil.svg')); ?>">
           </div>
           <p class="Servicios-card-text">
-            Las aplicaciones móviles híbridas se pueden subir a Play Store o Apple Store con la ventaja de no tener que desarrollar la misma aplicación para cada sistema operativo. Conoce más de esta tecnología en nuestro blog. li19La83
+            Las aplicaciones móviles híbridas se pueden subir a Play Store o Apple Store con la ventaja de no tener que desarrollar la misma aplicación para cada sistema operativo. Conoce más de esta tecnología en nuestro blog.
           </p>
         </div>
       </div>
